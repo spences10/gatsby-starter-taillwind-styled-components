@@ -1,20 +1,35 @@
-import React from "react"
 import { Link } from "gatsby"
-
-import Layout from "../components/layout"
+import React from "react"
+import styled from "styled-components"
+import tw from "tailwind.macro"
 import Image from "../components/image"
+import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+const StyledH1 = styled.h1`
+  ${tw`
+    m-0 
+    text-4xl
+  `}
+`
+
+const StyledLink = styled(Link)`
+  ${tw`
+    underline
+    text-blue-800
+  `}
+`
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
+    <StyledH1>Hi people</StyledH1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <StyledLink to="/page-2/">Go to page 2</StyledLink>
   </Layout>
 )
 
